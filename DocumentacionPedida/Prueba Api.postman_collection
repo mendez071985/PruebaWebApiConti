@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "cf5448df-3c50-42e1-9df7-cc4c0fd52c43",
+		"name": "New Collection Prueba Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44395/api/Clientes/AddCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 1,\r\n     \"nombre_cliente\": \"Jose\",\r\n     \"apellido_cliente\":\"Acevedo\",\r\n     \"nro_documento\": \"4546666\",\r\n     \"direccion\": \"Pueblo Cordiales\",\r\n     \"telefono\": \"56565655\",\r\n     \"ocupacion\":\"Estudiante\",\r\n     \"tipo_documento\":\"CI\",\r\n     \"cod_cliente\":45666\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44395/api/Clientes/AddCliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"api",
+						"Clientes",
+						"AddCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44395/api/Cuenta/AddCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"cod_cliente\":45666,\r\n    \"nombre_cliente\": \"Jose Acevedo\",\r\n    \"nro_cuenta\":\"5152\",\r\n    \"sucursal\": \"39\",\r\n    \"nombre_cuenta\": \"cta.cte\",\r\n    \"estado\":\"A\",\r\n    \"saldo\":50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44395/api/Cuenta/AddCuenta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"api",
+						"Cuenta",
+						"AddCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 1,\r\n     \"nombre\": \"Jose\",\r\n     \"apellido\":\"Acevedo\",\r\n     \"numeroDocumento\": \"4546666\",\r\n     \"direccion\": \"Pueblo Cordiales\",\r\n     \"telefono\": \"56565655\",\r\n     \"ocupacion\":\"Estudiante\",\r\n     \"tipoDocumento\":\"CI\",\r\n     \"codigo\":45666\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Clientes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"codigoCliente\":45666,\r\n    \"numeroDocumento\":\"4546666\",\r\n    \"cuenta\":\"5152\",\r\n    \"sucursal\": \"39\",\r\n    \"nombre\": \"cta.cte\",\r\n    \"estado\":\"A\",\r\n    \"saldo\":50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Cuenta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 0,\r\n     \"nombre\": \"Antonio\",\r\n     \"apellido\":\"Britez\",\r\n     \"numeroDocumento\": \"5485568\",\r\n     \"direccion\": \"San Andres\",\r\n     \"telefono\": \"85556548\",\r\n     \"ocupacion\":\"Estudiante\",\r\n     \"tipoDocumento\":\"CI\",\r\n     \"codigo\":15005\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Clientes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"codigoCliente\":15005,\r\n    \"numeroDocumento\" :\"5485568\",\r\n    \"cuenta\":\"51563\",\r\n    \"sucursal\": \"25\",\r\n    \"nombre\": \"cta.cte\",\r\n    \"estado\":\"A\",\r\n    \"saldo\":60000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Cuenta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrarCliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Clientes/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Clientes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificarCliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 1,\r\n     \"nombre_cliente\": \"Jose\",\r\n     \"apellido_cliente\":\"Acevedo\",\r\n     \"nro_documento\": \"4546666\",\r\n     \"direccion\": \"Pueblo Cordiales\",\r\n     \"telefono\": \"56565655\",\r\n     \"ocupacion\":\"Estudiante\",\r\n     \"tipo_documento\":\"CI\",\r\n     \"cod_cliente\":45666\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Clientes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrarCuenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Cuenta/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Cuenta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarTransferencia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"nombreBeneficiario\":\"Antonio Britez\",\r\n    \"cuentaBeneficiario\": \"51563\",\r\n    \"documentoBeneficiario\":\"5485568\",\r\n    \"nombreRemitente\": \"Jose Acevedo\",\r\n    \"cuentaRemitente\": \"5152\",\r\n    \"documentoRemitente\":\"4546666\",\r\n    \"monto\":600,\r\n    \"motivo\" : \"Gasto Familiar\",\r\n    \"fecha\":\"08/07/2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Transferencia",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Transferencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HistoricoDeTransferencia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Transferencia/51563/R",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Transferencia",
+						"51563",
+						"R"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EstadoCuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Cuenta/51563",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Cuenta",
+						"51563"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
