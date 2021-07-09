@@ -69,4 +69,3 @@ C:\Users\arnal\source\repos\PruebaWebApi\PruebaWebApi\obj\Debug\netcoreapp3.1\Pr
 C:\Users\arnal\source\repos\PruebaWebApi\PruebaWebApi\obj\Debug\netcoreapp3.1\PruebaWebApi.dll
 C:\Users\arnal\source\repos\PruebaWebApi\PruebaWebApi\obj\Debug\netcoreapp3.1\PruebaWebApi.pdb
 C:\Users\arnal\source\repos\PruebaWebApi\PruebaWebApi\obj\Debug\netcoreapp3.1\PruebaWebApi.genruntimeconfig.cache
-C:\Users\arnal\source\repos\PruebaWebApi\PruebaWebApi\obj\Debug\netcoreapp3.1\PruebaWebApi.csproj.AssemblyReference.cache
