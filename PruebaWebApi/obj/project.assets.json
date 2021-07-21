@@ -1734,11 +1734,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arnal\\source\\repos\\PruebaWebApi\\PruebaWebApi\\PruebaWebApi.csproj",
+      "projectUniqueName": "C:\\ReposGit\\PruebaWebApiConti\\PruebaWebApi\\PruebaWebApi.csproj",
       "projectName": "PruebaWebApi",
-      "projectPath": "C:\\Users\\arnal\\source\\repos\\PruebaWebApi\\PruebaWebApi\\PruebaWebApi.csproj",
+      "projectPath": "C:\\ReposGit\\PruebaWebApiConti\\PruebaWebApi\\PruebaWebApi.csproj",
       "packagesPath": "C:\\Users\\arnal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arnal\\source\\repos\\PruebaWebApi\\PruebaWebApi\\obj\\",
+      "outputPath": "C:\\ReposGit\\PruebaWebApiConti\\PruebaWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arnal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1812,7 +1812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
