@@ -1,0 +1,13 @@
+﻿using PruebaContinental.Transferencia.Core.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PruebaContinental.Transferencia.Core.Interfaces
+{
+    public interface ITransferenciasRepository
+    {
+        Task<string> transferencia(TransParametrosDTOs TransParam);
+    }
+}
