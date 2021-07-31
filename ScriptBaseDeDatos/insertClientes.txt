@@ -1,0 +1,6 @@
+insert into Cliente (id,codigo,  nombre, apellido, direccion, telefono, estado)
+values (3,'5558999','Joel', 'Martinez', 'New 5654','0985785685','A');
+insert into Cliente (id,codigo,  nombre, apellido, direccion, telefono, estado)
+values (1,'3794260','Andres', 'Gonzalez', 'New York','0975564789','A');
+insert into Cliente (id,codigo,  nombre, apellido, direccion, telefono, estado)
+values (2,'4183699','Hector', 'Ocampo', 'Villa Nueva 2255','0991564789','A');

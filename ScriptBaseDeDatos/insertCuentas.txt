@@ -1,0 +1,6 @@
+insert into Cuenta (codigo, nombre,  estado, saldo, tipo, id, codigoCliente)
+values ('55558978','Ahorro', 'A', 3990000,'Aho', 2 , '4183699');
+insert into Cuenta (codigo, nombre,  estado, saldo, tipo, id, codigoCliente)
+values ('55555555','Ahorro', 'A', 10000,'Aho', 3 ,'3794260');
+insert into Cuenta (codigo, nombre,  estado, saldo, tipo, id, codigoCliente)
+values ('55556666','Ahorro', 'A', 50000,'Aho', 1, '5558999');

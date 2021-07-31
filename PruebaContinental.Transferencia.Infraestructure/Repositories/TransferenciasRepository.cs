@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using PruebaContinental.Transferencia.Core.DTOs;
 using PruebaContinental.Transferencia.Core.Entities;
 using PruebaContinental.Transferencia.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace PruebaContinental.Transferencia.Infraestructure.Repositories
 {
     public class TransferenciasRepository : ITransferenciasRepository
 
     {
+        bool check = false;
         private readonly TransferenciaContext _context;
         public TransferenciasRepository(TransferenciaContext context)
         {
@@ -21,8 +23,9 @@ namespace PruebaContinental.Transferencia.Infraestructure.Repositories
 
         public async Task<string> transferencia(TransParametrosDTOs TransParam)
         {
+
             var mensaje = "Transferencia realizada";
-            var secuencia = _context.Cuenta.ToList().Count();
+            var secuencia = _context.Transferencia.ToList().Count();
             var origen = (from pd in _context.Cliente
                           join od in _context.Cuenta on pd.Codigo equals od.CodigoCliente
                           where od.Codigo == TransParam.CuentaOrigen
@@ -53,6 +56,27 @@ namespace PruebaContinental.Transferencia.Infraestructure.Repositories
 
                 if (destino.Count > 0)
                 {
+                    Conceptos motivo = new Conceptos();
+
+                    foreach (string emn in Enum.GetNames(typeof(Conceptos)))
+                    {
+                        // Debug.Log(":: " + emn );
+
+                        if (emn.ToUpper().Trim() == TransParam.Motivo.ToUpper().Trim())
+                        {
+                            motivo = (Conceptos)Enum.Parse(typeof(Conceptos), TransParam.Motivo.ToUpper().Trim(), true);
+
+                            check = true;
+                        }
+
+                    };
+
+                    if (check == false)
+                    {
+                        throw new Exception("El motivo ingresado no existe, debe ser: Enfermedad , Familiar, Gastos");
+                    }
+
+
                     if (origen[0].Saldo > 0 && origen[0].Saldo >= TransParam.monto)
                     {
                         var queryOrigen = (from a in _context.Cuenta
@@ -79,6 +103,8 @@ namespace PruebaContinental.Transferencia.Infraestructure.Repositories
                         transferencia.Destino = TransParam.CuentaDestino;
                         transferencia.Origen = TransParam.CuentaOrigen;
                         transferencia.Monto = TransParam.monto;
+                        // Concepto Concept = (Concepto)TransParam.Motivo;
+                        transferencia.Concepto = motivo;
                         _context.Transferencia.Add(transferencia);
                         _context.SaveChanges();
                     }
@@ -86,6 +112,7 @@ namespace PruebaContinental.Transferencia.Infraestructure.Repositories
                     {
                         mensaje = "Cuenta origen no posee saldo suficiente";
                     }
+
                 }
                 else
                 {
@@ -98,6 +125,35 @@ namespace PruebaContinental.Transferencia.Infraestructure.Repositories
             }
 
             return await Task.FromResult(mensaje);
+        }
+
+        public async Task<IEnumerable<TransferenciaReporteDTOs>> transferenciaReporte(string cuenta)
+        {
+            var listaTransferencia = await _context.Transferencia.ToListAsync();
+            var cuentaDestino = (from i in listaTransferencia
+                          where i.Destino == cuenta
+                          select new TransferenciaReporteDTOs
+                          {
+                              Cuenta = i.Destino,
+                              Monto = i.Monto,
+                              Concepto = i.Concepto.ToString(),
+                              TipoTransferencia = "Transferencia Recibida."
+                          });
+
+            var cuentaRecibida = (from i in listaTransferencia
+                                 where i.Origen == cuenta
+                                 select new TransferenciaReporteDTOs
+                                 {
+                                     Cuenta = i.Origen,
+                                     Monto = i.Monto,
+                                     Concepto = i.Concepto.ToString(),
+                                     TipoTransferencia = "Transferencia Enviada."
+                                 });
+
+
+            var unionCuenta = cuentaDestino.Concat(cuentaRecibida);
+
+            return unionCuenta;
         }
     }
 }

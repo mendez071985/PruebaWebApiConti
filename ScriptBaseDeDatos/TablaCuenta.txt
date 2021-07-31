@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Cuenta] (
+    [codigo]        VARCHAR (10) NOT NULL,
+    [nombre]        VARCHAR (50) NULL,
+    [estado]        VARCHAR (10) NULL,
+    [saldo]         FLOAT (53)   NULL,
+    [tipo]          VARCHAR (10) NULL,
+    [id]            FLOAT (53)   NOT NULL,
+    [codigoCliente] VARCHAR (10) NOT NULL,
+    CONSTRAINT [PK_Cuenta] PRIMARY KEY CLUSTERED ([id] ASC, [codigo] ASC)
+);
+

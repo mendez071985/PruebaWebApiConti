@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PruebaContinental.Transferencia.Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,14 @@ namespace PruebaContinental.Transferencia.Infraestructure.Data.Configurations
         public void Configure(EntityTypeBuilder<Transferencias> builder)
         {
             builder.Property(e => e.Id).HasColumnName("id");
-
+            var converter = new ValueConverter<Conceptos, string>(
+                v => v.ToString(),
+                v => (Conceptos)Enum.Parse(typeof(Conceptos),v)
+                );
             builder.Property(e => e.Concepto)
                 .HasColumnName("concepto")
-                .HasMaxLength(50)
-                .IsUnicode(false);
+                .HasConversion(converter)
+                 .IsUnicode(false);
 
             builder.Property(e => e.Destino)
                 .HasColumnName("destino")

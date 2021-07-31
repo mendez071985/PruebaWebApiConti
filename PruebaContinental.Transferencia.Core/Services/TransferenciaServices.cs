@@ -20,5 +20,10 @@ namespace PruebaContinental.Transferencia.Core.Services
         {
             return await _iTransferenciasRepository.transferencia(TransParam);
         }
+
+        public async Task<IEnumerable<TransferenciaReporteDTOs>> transferenciaReporte(string cuenta)
+        {
+            return await _iTransferenciasRepository.transferenciaReporte(cuenta);
+        }
     }
 }

@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[Transferencia] (
+    [id]       FLOAT (53)   NOT NULL,
+    [origen]   VARCHAR (50) NULL,
+    [destino]  VARCHAR (50) NULL,
+    [monto]    FLOAT (53)   NOT NULL,
+    [concepto] VARCHAR (50) NULL,
+    CONSTRAINT [PK_Transferencia] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+

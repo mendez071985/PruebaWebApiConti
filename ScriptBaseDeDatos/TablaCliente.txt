@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Cliente] (
+    [id]         FLOAT (53)   NOT NULL,
+    [codigo]     VARCHAR (10) NOT NULL,
+    [nombre]     VARCHAR (50) NULL,
+    [apellido]   VARCHAR (50) NULL,
+    [direccion ] VARCHAR (50) NULL,
+    [telefono]   VARCHAR (10) NULL,
+    [estado]     VARCHAR (2)  NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC, [codigo] ASC)
+);
+

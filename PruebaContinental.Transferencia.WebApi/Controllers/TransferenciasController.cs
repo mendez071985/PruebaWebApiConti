@@ -21,16 +21,27 @@ namespace PruebaContinental.Transferencia.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> TransferenciaPos(TransParametrosDTOs TransParam)
+        public async Task<IActionResult> TransferenciaPos(TransParametrosDTOs transParam)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var resultado = await _iTransferenciaServices.transferencia(TransParam);
+            var resultado = await _iTransferenciaServices.transferencia(transParam);
             var response = new ApiResponseTransferencia<string>(resultado);
             return Ok(response);
         }
 
+        [HttpGet("{cuenta}")]
+        public async Task<IActionResult> TransferenciaGet(string cuenta)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var resultado = await _iTransferenciaServices.transferenciaReporte(cuenta);
+            var response = new ApiResponseTransferencia<IEnumerable<TransferenciaReporteDTOs>>(resultado);
+            return Ok(response);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace PruebaContinental.Transferencia.Core.Interfaces
     public interface ITransferenciasRepository
     {
         Task<string> transferencia(TransParametrosDTOs TransParam);
+        Task<IEnumerable<TransferenciaReporteDTOs>> transferenciaReporte(string cuenta);
     }
 }
