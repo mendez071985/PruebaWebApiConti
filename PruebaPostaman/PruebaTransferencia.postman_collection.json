@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "615da9c7-513b-4ec1-b7a5-f8b825e6ce91",
+		"name": "PruebaTransferencia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:65374/api/Transferencias/5555555",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:65374/api/Transferencias/5555555",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "65374",
+					"path": [
+						"api",
+						"Transferencias",
+						"5555555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:65374/api/Transferencias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaOrigen\": \"55558978\",\r\n  \"cuentaDestino\": \"55555555\",\r\n  \"motivo\": \"Enfermedad\",\r\n  \"monto\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:65374/api/Transferencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "65374",
+					"path": [
+						"api",
+						"Transferencias"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
